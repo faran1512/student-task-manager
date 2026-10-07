@@ -1,8 +1,12 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Student Task Management System
 =======
 # Student Task Management System
 >>>>>>> parent of db17ad1 (updated readme.md file)
+=======
+# Student XYZ Task Management System
+>>>>>>> parent of 1288614 (new commit0)
 
 A simple web application that helps students add, view, complete, delete, and search their tasks.
 
