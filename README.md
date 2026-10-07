@@ -5,7 +5,7 @@ A simple web application that helps students add, view, complete, delete, and se
 ## Team Members
 
 - Faran Abdullah (MSDSF26M001), GitHub: faran1512
-- Salman Rasheed
+- Salman Rasheed (PHDDSF26M003), Github: Salman030992
 
 ## How to Run
 
