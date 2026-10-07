@@ -21,6 +21,18 @@
           <button class="btn btn-danger w-100" onclick="addTask()">Add Task</button>
         </div>
 
+        <!-- Search tasks -->
+        <div class="mb-4">
+          <label for="taskSearch" class="form-label fw-semibold">Search Tasks</label>
+          <input
+            type="search"
+            id="taskSearch"
+            class="form-control"
+            placeholder="Search by task title or description..."
+            oninput="searchTasks()"
+          >
+        </div>
+
         <!-- Task list -->
         <ul id="taskList" class="list-group">
           <li class="list-group-item text-muted">No tasks yet.</li>
@@ -28,6 +40,51 @@
       </div>
     </div>
   </div>
+
+  <script>
+    function searchTasks() {
+      const searchInput = document.getElementById("taskSearch");
+      const taskList = document.getElementById("taskList");
+      const query = searchInput.value.trim().toLowerCase();
+      const tasks = taskList.querySelectorAll("li");
+
+      let visibleTasks = 0;
+
+      tasks.forEach(task => {
+        // Ignore the default message and previous "no results" message.
+        if (
+          task.id === "noTasksMessage" ||
+          task.id === "noSearchResults" ||
+          task.textContent.trim().toLowerCase() === "no tasks yet."
+        ) {
+          return;
+        }
+
+        const matches = task.textContent.toLowerCase().includes(query);
+        task.style.display = matches ? "" : "none";
+
+        if (matches) {
+          visibleTasks++;
+        }
+      });
+
+      let noResults = document.getElementById("noSearchResults");
+
+      if (query && visibleTasks === 0) {
+        if (!noResults) {
+          noResults = document.createElement("li");
+          noResults.id = "noSearchResults";
+          noResults.className = "list-group-item text-muted text-center";
+          taskList.appendChild(noResults);
+        }
+
+        noResults.textContent = `No tasks found for "${searchInput.value}".`;
+        noResults.style.display = "";
+      } else if (noResults) {
+        noResults.style.display = "none";
+      }
+    }
+  </script>
 
   <script src="script.js"></script>
 </body>
