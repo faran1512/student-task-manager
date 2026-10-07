@@ -1,4 +1,4 @@
-# Student Task Manager ABCXYZ
+# Student Task Manager
 
 A simple web application that helps students add, view, complete, delete, and search their tasks.
 
