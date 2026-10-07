@@ -1,4 +1,4 @@
-# Student Task Management System
+# Student XYZ Task Management System
 
 A simple web application that helps students add, view, complete, delete, and search their tasks.
 
